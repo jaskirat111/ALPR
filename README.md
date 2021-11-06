@@ -38,10 +38,10 @@ $ bash get-networks.sh && bash run.sh -i samples/test -o /tmp/output -c /tmp/out
 Use the script "Livetracking.py" to run the ALPR in Live footage.
 Download the sample Video footage from https://drive.google.com/file/d/1MhDOwNrgZB7EsY_YKwf7H2TMBzNo29nT/view?usp=sharing
 <p align="center">
-  <img src="alpr.png" alt="" width="90%" height="50%">
+  <img src="alpr1.png" alt="" width="90%" height="50%">
 </p>
 <p align="center">
-  <img src="alpr1.png" alt="" width="90%" height="50%">
+  <img src="alpr2.png" alt="" width="90%" height="50%">
 </p>
 
 ## Training the LP detector
