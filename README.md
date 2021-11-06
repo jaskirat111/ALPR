@@ -52,6 +52,9 @@ Download the sample Video footage from https://drive.google.com/file/d/1MhDOwNrg
 <p align="center">
   <img src="alpr5.png" alt="" width="90%" height="50%">
 </p>
+<p align="center">
+  <img src="alpr6.png" alt="" width="90%" height="50%">
+</p>
 
 ## Training the LP detector
 
