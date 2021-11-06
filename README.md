@@ -36,7 +36,7 @@ $ bash get-networks.sh && bash run.sh -i samples/test -o /tmp/output -c /tmp/out
 
 ## Running Realtime Tracking and Recognition of License Plates
 Use the script "Livetracking.py" to run the ALPR in Live footage
-
+Download the sample Video footage from https://drive.google.com/file/d/1MhDOwNrgZB7EsY_YKwf7H2TMBzNo29nT/view?usp=sharing
 
 ## Training the LP detector
 
