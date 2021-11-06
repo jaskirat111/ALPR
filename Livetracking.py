@@ -39,6 +39,8 @@ if __name__ == '__main__':
                     ret, frame = cap.read()
                     w = frame.shape[0]
                     h = frame.shape[1]
+                    # describe the type of font to be used.
+                    font = cv2.FONT_HERSHEY_SIMPLEX
                     ratio = float(max(frame.shape[:2]))/min(frame.shape[:2])
                     side  = int(ratio*288.)
                     bound_dim = min(side + (side%(2**4)),608)
@@ -52,12 +54,12 @@ if __name__ == '__main__':
                                 ptsarray = shape.pts.flatten()
                                 try:
                                     frame = cv2.rectangle(frame,(int(ptsarray[0]*h), int(ptsarray[5]*w)),(int(ptsarray[1]*h),int(ptsarray[6]*w)),(0,255,0),3)
-                                    cv2.imshow('detected_plate', frame)
+                                    #cv2.imshow('detected_plate', frame)
                                 except:
                                     traceback.print_exc()
                                     sys.exit(1)
                             cv2.imwrite('%s/_lp.png' % (output_dir),Ilp*255.)
-                            cv2.imshow('lp_bic', Ilp)
+                            #cv2.imshow('lp_bic', Ilp)
                             R,(width,height) = detect(ocr_net, ocr_meta, 'lp_images/_lp.png' ,thresh=ocr_threshold, nms=None)
                             if len(R):
 
@@ -66,7 +68,10 @@ if __name__ == '__main__':
 
                                     L.sort(key=lambda x: x.tl()[0])
                                     lp_str = ''.join([chr(l.cl()) for l in L])
-                                    print("License Plate Detected: ", lp_str)
+                                    # Use putText() method for inserting text on video
+                                    cv2.putText(frame,str(lp_str), (10, 50), font, 1, (255, 255, 255), 2, cv2.LINE_4)
+                                    cv2.imshow('detected_plate', frame)
+                                    #print("License Plate Detected: ", lp_str)
                     if cv2.waitKey(5) & 0xFF == ord('q'):
                         break
             cap.release()
